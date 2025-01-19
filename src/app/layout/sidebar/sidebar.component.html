@@ -1,0 +1,8 @@
+<div>
+  <div *ngFor="let skill of skills | keyvalue">
+    <h3>{{ skill.key }}</h3>
+    <span *ngFor="let tool of skill.value">
+      <span>{{ tool }}</span>
+    </span>
+  </div>
+</div>
