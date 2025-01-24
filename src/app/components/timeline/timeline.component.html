@@ -1,0 +1,23 @@
+<h2 class="text-2xl font-bold mb-4">
+  Experience
+</h2>
+
+<div *ngFor="let project of projects" class="project">
+  <div class="project-period">
+    <span>{{ project.startDate | date: 'MMMM yyyy' }} - {{ project.endDate ? (project.endDate | date: 'MMMM yyyy') : "Present"}}</span>
+  </div>
+
+  <div class="flex items-center">
+    <div class="project-job-title">{{ project.jobTitle }}</div>
+    <span class="mx-2">•</span>
+    <div class="project-company">{{ project.company }}</div>
+  </div>
+
+  <ul class="project-responsibilities p-4 list">
+    <li class="mb-1" *ngFor="let responsibility of project.responsibilities">
+      {{ responsibility }}
+    </li>
+  </ul>
+
+  <br>
+</div>

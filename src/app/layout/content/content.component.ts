@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TimelineComponent } from '../../components/timeline/timeline.component';
 
 @Component({
   selector: 'app-content',
-  imports: [],
+  imports: [TimelineComponent],
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss'
 })

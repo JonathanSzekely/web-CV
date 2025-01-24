@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 import { skills } from '../../constants/skills';
 
 @Component({
@@ -12,5 +11,5 @@ import { skills } from '../../constants/skills';
 })
 
 export class SidebarComponent {
-  skills = skills;
+  public skills = skills;
 }
