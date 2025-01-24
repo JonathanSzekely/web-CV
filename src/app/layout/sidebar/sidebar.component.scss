@@ -1,0 +1,18 @@
+:host {
+  @apply fixed h-svh w-80 -left-80 px-5 py-4 pl-6 bg-zinc-900 transition-all;
+  &:hover {
+    @apply left-0;
+  }
+}
+
+.skill-head {
+  @apply relative px-3 py-2 bg-orange-300 text-xl font-semibold text-slate-950;
+  &:before {
+    @apply absolute block w-2 -left-2 top-2 bottom-2 bg-orange-400;
+    content: '';
+  }
+}
+
+.tools > span {
+  // @apply whitespace-nowrap;
+}

@@ -1,8 +1,28 @@
+<div class="mb-7">
+  <h3 class="text-2xl text-white mb-4">Profile</h3>
+  <p class="mb-3">
+    Interface engineer both formally and informally
+    trained with a strong practical learning drive
+    focused on complex problem solving.
+  </p>
+  <p>
+    With a work background spanning over both old
+    and new web standards, as well design and
+    graphics, I seek to reconcile the technological
+    and stylistic aspects of what User Experience and
+    User Interface building imply.
+  </p>
+</div>
+
 <div>
+  <h3 class="text-2xl text-white mb-4">Skills</h3>
   <div *ngFor="let skill of skills | keyvalue">
-    <h3>{{ skill.key }}</h3>
-    <span *ngFor="let tool of skill.value">
-      <span>{{ tool }}</span>
-    </span>
+    <h3 class="skill-head mb-1">{{ skill.key }}</h3>
+    <div class="tools mb-3 pl-3">
+      <span *ngFor="let tool of skill.value; let isLast = last">
+        {{ tool + (!isLast ? ', ' : '') }}
+      </span>
+    </div>
   </div>
 </div>
+
