@@ -1,5 +1,6 @@
 :host {
-  @apply fixed h-svh w-80 -left-80 px-5 py-4 pl-6 bg-zinc-900 transition-all;
+  @apply fixed z-10 h-svh w-80 -left-80 px-5 py-4 pl-6 bg-zinc-900 transition;
+  transition-property: left;
   &:hover {
     @apply left-0;
   }

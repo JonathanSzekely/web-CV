@@ -1,3 +1,4 @@
 :host {
-  @apply block p-6;
+  @apply block p-6 overflow-y-auto;
+  max-height: calc(100svh - theme('spacing.36'));
 }

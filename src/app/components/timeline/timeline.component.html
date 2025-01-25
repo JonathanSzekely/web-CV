@@ -1,14 +1,14 @@
-<h2 class="text-2xl font-bold mb-4">
+<h2 class="text-2xl mb-4">
   Experience
 </h2>
 
 <div *ngFor="let project of projects" class="project">
-  <div class="project-period">
-    <span>{{ project.startDate | date: 'MMMM yyyy' }} - {{ project.endDate ? (project.endDate | date: 'MMMM yyyy') : "Present"}}</span>
+  <div class="project-period text-sm text-slate-300">
+    {{ project.startDate | date: 'MMMM yyyy' }} - {{ project.endDate ? (project.endDate | date: 'MMMM yyyy') : "Present"}}
   </div>
 
   <div class="flex items-center">
-    <div class="project-job-title">{{ project.jobTitle }}</div>
+    <div class="project-job-title text-lg font-medium">{{ project.jobTitle }}</div>
     <span class="mx-2">•</span>
     <div class="project-company">{{ project.company }}</div>
   </div>
