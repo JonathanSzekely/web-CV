@@ -10,6 +10,7 @@ import { projects } from "../../constants/projects";
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss'
 })
+
 export class TimelineComponent {
-  public projects: Array<Project> = projects;
+  public projects: Project[] = projects;
 }

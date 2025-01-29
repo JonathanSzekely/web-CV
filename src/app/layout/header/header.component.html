@@ -1,6 +1,8 @@
 <div class="p-6 flex items-center">
   <div class="profile-pic mr-6">
-    <img src="PFP_linkedin.jpg" class="object-contain h-24 w-24 border border-orange-300" alt="Profile Picture" />
+    <a class="block size-24 border border-orange-300 hover:border-orange-400 hover:border-2" href="/">
+      <img src="PFP_linkedin.jpg" class="block object-contain" alt="Profile Picture" />
+    </a>
   </div>
   <div>
     <h2 class="text-4xl">Jonathan Szekely</h2>
@@ -13,6 +15,12 @@
     <div>Phone : 0040 747 895 038</div>
     <div>Linkedin: <a href="https://www.linkedin.com/in/jonathan-szekely-7b96bb150">https://www.linkedin.com/in/jonathan-szekely-7b96bb150</a></div>
     <div>Github: <a href="https://github.com/JonathanSzekely">https://github.com/JonathanSzekely</a></div>
+    <div class="examples-btn" (click)="exampleMenuShown = !exampleMenuShown">Live Code Examples
+      <a class="font-bold"> {{ exampleMenuShown ? 'v' : '>' }} </a>
+    </div>
   </div>
 </div>
 
+<nav class="examples-menu" *ngIf="exampleMenuShown">
+  <a href="/examples/table" routerLink="/examples/table">Table</a>
+</nav>

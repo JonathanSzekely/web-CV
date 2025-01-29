@@ -8,6 +8,10 @@
   @apply text-white;
 }
 
+body {
+  @apply bg-zinc-950;
+}
+
 a {
   @apply text-orange-300 transition-colors;
   &:hover {
