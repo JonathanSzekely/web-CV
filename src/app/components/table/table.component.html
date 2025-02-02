@@ -1,3 +1,39 @@
 <div class="recipes-table grid">
+  <div class="recipes-table-header">
+    <div></div>
+    <div>Name</div>
+    <div>Difficulty</div>
+    <div>Time (minutes)</div>
+    <div>Ingredients</div>
+    <div>kcal / serv.</div>
+  </div>
+  <div class="recipes-table-body">
+    <div class="recipe-row" *ngFor="let recipe of recipes">
+      <div class="recipe-image">
+        <img [src]="recipe.image" alt="Recipe Image">
+      </div>
+      <div class="recipe-name">
+        <h3> {{recipe.name}} </h3>
+      </div>
+      <div class="recipe-difficulty">
+        <div>{{recipe.difficulty}}</div>
+      </div>
+      <div class="recipe-time">
+        <div>{{recipe.prepTimeMinutes}} min</div>
+      </div>
+      <div class="recipe-ingredients">
+        <div *ngFor="let ingredient of recipe.ingredients"> {{ingredient}} </div>
+      </div>
+
+      <div class="recipe-calories"> {{recipe.caloriesPerServing}} kcal</div>
+
+
+      <!-- <div class="recipe-cuisine"></div>
+      <div class="recipe-tags">
+        <div *ngFor="let recipeTag of recipe.tags"> {{recipeTag}} </div>
+      </div>
+      <div class=""></div> -->
+    </div>
+  </div>
   table working
 </div>

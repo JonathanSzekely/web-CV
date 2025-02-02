@@ -1,0 +1,13 @@
+.recipes-table {
+  .recipes-table-header, .recipe-row {
+    @apply grid gap-x-4 auto-rows-auto;
+    grid-template-columns: theme('spacing.20') theme('spacing.48')
+      theme('spacing.16') theme('spacing.28') 1fr theme('spacing.28');
+  }
+  .recipe-ingredients {
+    @apply flex flex-wrap items-start justify-start gap-x-2 gap-y-1;
+    > div {
+      @apply inline-flex h-6 text-nowrap;
+    }
+  }
+}
