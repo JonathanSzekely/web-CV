@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { TableComponent } from './components/table/table.component';
+import { RecipesService } from './services/recipes.service';
 
 export const appRoutes: Routes = [
   {
@@ -9,6 +10,7 @@ export const appRoutes: Routes = [
   },
   {
     path: 'examples/table',
-    component: TableComponent
+    component: TableComponent,
+    providers: [ RecipesService ]
   }
 ];

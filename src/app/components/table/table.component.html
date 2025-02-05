@@ -1,9 +1,13 @@
+<div class="recipes-filters">
+  <label for="search">Search</label>
+  <input type="text" id="search" [(ngModel)]="search" (input)="filterRecipes()">
+</div>
 <div class="recipes-table grid">
-  <div class="recipes-table-header">
+  <!-- <div class="recipes-table-header">
     <div></div>
     <div>Name</div>
     <div>Difficulty</div>
-    <div>Time (minutes)</div>
+    <div>Time</div>
     <div>Ingredients</div>
     <div>kcal / serv.</div>
   </div>
@@ -22,18 +26,21 @@
         <div>{{recipe.prepTimeMinutes}} min</div>
       </div>
       <div class="recipe-ingredients">
-        <div *ngFor="let ingredient of recipe.ingredients"> {{ingredient}} </div>
+        <div class="ingredients-wrapper">
+          <div *ngFor="let ingredient of recipe.ingredients"> {{ingredient}} </div>
+        </div>
       </div>
 
       <div class="recipe-calories"> {{recipe.caloriesPerServing}} kcal</div>
 
 
-      <!-- <div class="recipe-cuisine"></div>
+      <div class="recipe-cuisine"></div>
       <div class="recipe-tags">
         <div *ngFor="let recipeTag of recipe.tags"> {{recipeTag}} </div>
       </div>
-      <div class=""></div> -->
+      <div class=""></div>
     </div>
-  </div>
-  table working
+  </div> -->
+
+
 </div>
