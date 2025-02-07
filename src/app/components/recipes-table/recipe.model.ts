@@ -15,4 +15,6 @@ export interface Recipe {
   servings: number;
   tags: string[];
   userId: number;
+
+  [key: string]: any;
 }

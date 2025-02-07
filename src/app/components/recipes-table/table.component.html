@@ -42,5 +42,26 @@
     </div>
   </div> -->
 
-
+  <div class="recipes-table-header">
+    <div *ngFor="let column of tableColumns" (click)="sortRecipes(column.objPropName)" class="flex">
+      <div>{{column.header}}</div>
+      <div *ngIf="sortBy && sortBy.column == column.objPropName">
+        <ng-container *ngIf="sortBy.direction == 'asc'">^</ng-container>
+        <ng-container *ngIf="sortBy.direction == 'desc'">v</ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="recipes-table-body">
+    <div class="recipe-row" *ngFor="let recipe of recipes">
+      <div *ngFor="let column of tableColumns" class="recipe-{{column.objPropName}}">
+        <ng-container [ngSwitch]="column.objPropName">
+          <img *ngSwitchCase="'image'" [src]="recipe.image" alt="Recipe Image">
+          <div *ngSwitchCase="'ingredients'" class="ingredients-wrapper">
+            <div *ngFor="let ingredient of recipe.ingredients"> {{ingredient}} </div>
+          </div>
+          <div *ngSwitchDefault> {{recipe[column.objPropName]}} </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
 </div>

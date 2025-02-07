@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { RecipeListResponse } from './recipeListResponse.model';
 import { CommonModule } from '@angular/common';
-import { RecipesService } from '../../services/recipes.service';
+import { RecipesService, SortDirection } from '../../services/recipes.service';
 import { FormsModule } from '@angular/forms';
-import { TableColumn } from './tableColumn.model';
+import { tableColumns } from "./recipeTableColumns";
 
 @Component({
   selector: 'app-table',
@@ -14,45 +14,10 @@ import { TableColumn } from './tableColumn.model';
 })
 
 export class TableComponent implements OnInit {
+  tableColumns = tableColumns;
   recipes: Recipe[] = [];
   search: string = '';
-  tableColumns: TableColumn[] = [{
-    header: '',
-    field: 'image',
-    width: '100px',
-    cssClass: 'recipe-image'
-  },
-  {
-    header: 'Name',
-    field: 'name',
-    width: '100px',
-    cssClass: 'recipe-name'
-  },
-  {
-    header: 'Difficulty',
-    field: 'difficulty',
-    width: '100px',
-    cssClass: 'recipe-difficulty'
-  },
-  {
-    header: 'Time',
-    field: 'prepTimeMinutes',
-    width: '100px',
-    cssClass: 'recipe-time'
-  },
-  {
-    header: 'Ingredients',
-    field: 'ingredients',
-    width: '100px',
-    cssClass: 'recipe-ingredients'
-  },
-  {
-    header: 'kcal/serv.',
-    field: 'caloriesPerServing',
-    width: '100px',
-    cssClass: 'recipe-calories'
-  }
-];
+  sortBy?: { column: string, direction: SortDirection };
 
   constructor(private recipesService: RecipesService) {};
 
@@ -71,7 +36,16 @@ export class TableComponent implements OnInit {
   }
 
   sortRecipes(sortColumn: string) {
+    if (!this.sortBy) {
+      this.sortBy = { column: sortColumn, direction: 'asc' };
+    } else {
+      this.sortBy = { column: sortColumn, direction: this.sortBy.direction === 'asc' ? 'desc' : 'asc' };
+    }
 
+    this.recipesService.sortRecipes(this.sortBy.column, this.sortBy.direction)
+      .subscribe((response: any) => {
+        this.recipes = response.recipes;
+      });
   }
 
   // type Article = ReturnType<typeof Article> - server response typing at "runtime" example
